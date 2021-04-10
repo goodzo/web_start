@@ -7,11 +7,42 @@
     <style>
         body { font-size: 3rem; }
     </style>
-    <script>
-        document.write('just test');
-    </script>
-    //<script src="test.js"></script>
 </head>
 
+<body>
+    <input type="text"/><button onclick="input()">추가</button>   
+    <ul>
+	    <li>
+            추가된 텍스트 
+            <button>
+                삭제
+            </button>
+        </li>
+	    <!-- 추가될 위치 -->
 
-</html>
+        <script>
+                
+            function input() {
+                var val = document.getElementsByTagName("input")[0].value;
+                var txt = document.createTextNode(val);
+                var createli = document.createElement('li');
+                createli.appendChild(txt);
+
+                var btn = document.createElement('button');
+                console.log(btn)
+                var deltxt = document.createTextNode('삭제');
+                btn.appendChild(deltxt);
+
+                createli.appendChild(btn);
+                document.body.appendChild(createli);                
+                
+            }
+
+
+            
+
+
+        </script>
+
+    </ul>
+</body>
